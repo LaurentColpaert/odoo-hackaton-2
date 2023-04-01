@@ -85,7 +85,7 @@ public class Request {
                 int id_experience = rs.getInt("id_experience");
                 String date = rs.getString("date");
                 String place = rs.getString("place");
-                ArrayList<String> tags = getTags(id_experience);
+                ArrayList<String> tags = getTag(id_experience);
                 experiences.add(new Experience(id_capsule,date,place,tags));
             }
         } catch (SQLException e) {
@@ -94,7 +94,7 @@ public class Request {
         return experiences;
     }
 
-    private static ArrayList<String> getTags(int id) {
+    private static ArrayList<String> getTag(int id) {
         ArrayList<String> tags = new ArrayList<>();
 
         String query = "select tag.tag" +
@@ -103,6 +103,19 @@ public class Request {
                 "tag.id_tag == tag_experience.id_tag";
         try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
             stmt.setInt(1,id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                tags.add(rs.getString("tag"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return tags;
+    }
+    public static ArrayList<String> getTags() {
+        ArrayList<String> tags = new ArrayList<>();
+        String query = "select tag from tag";
+        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 tags.add(rs.getString("tag"));
@@ -164,5 +177,26 @@ public class Request {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static Person getPerson(int i) {
+        Person person = null;
+
+        String query = "select id_person, name, age, gender, country from person where id_person == ?";
+        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
+            stmt.setInt(1,i);
+            ResultSet rs = stmt.executeQuery();
+            int id = rs.getInt("id_person");
+            String name = rs.getString("name");
+            int age = rs.getInt("age");
+            int gender = rs.getInt("gender");
+            String country = rs.getString("country");
+            ArrayList<Capsule> capsules = getCapsules(id);
+            ArrayList<String> languages = getLanguages(id);
+            person = new Person(id,name,age,gender,country,languages,capsules);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return person;
     }
 }

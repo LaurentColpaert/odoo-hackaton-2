@@ -9,9 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import jdk.jfr.internal.tool.Main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class PageDeGardeController {
 
@@ -32,13 +32,13 @@ public class PageDeGardeController {
         try{
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/main.fxml"));
+//        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/experience.fxml"));
 
         Parent root  = loader.load();
-        MainController chatLayout = loader.getController();
-        chatLayout.setStage(stage);
-        stage.setScene(new Scene(root, 800, 420));
+        ExperienceController main = loader.getController();
+        main.setup();
+        stage.setScene(new Scene(root));
         stage.show();
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
