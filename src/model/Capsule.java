@@ -9,10 +9,14 @@ public class Capsule {
     private ArrayList<Experience> experiences;
 
     public Capsule(int id_capsule, String date_begin, String date_end, ArrayList<Experience> experiences) {
+        this(id_capsule,date_begin,date_end);
+        this.experiences = experiences;
+    }
+
+    public Capsule(int id_capsule, String date_begin, String date_end) {
         this.id_capsule = id_capsule;
         this.date_begin = date_begin;
         this.date_end = date_end;
-        this.experiences = experiences;
     }
 
     public String getDate_begin() {

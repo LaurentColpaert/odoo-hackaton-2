@@ -14,12 +14,20 @@ public class Person {
 
 
     public Person(int id_person, String name, String age, int gender, String country, ArrayList<String> languages, ArrayList<Capsule> capsules) {
+        this(id_person,name,age,gender,country,capsules);
+        this.languages = languages;
+    }
+
+    public Person(int id_person, String name, String age, int gender, String country) {
         this.id_person = id_person;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.country = country;
-        this.languages = languages;
+    }
+
+    public Person(int id, String name, String age, int gender, String country, ArrayList<Capsule> capsules) {
+        this(id, name, age, gender, country);
         this.capsules = capsules;
     }
 
