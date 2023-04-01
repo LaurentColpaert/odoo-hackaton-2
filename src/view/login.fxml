@@ -39,7 +39,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" fx:controller="controller.LoginController" prefWidth="540.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #F0ECE2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="403.0" layoutX="59.0" layoutY="1.0">
          <image>
@@ -48,7 +48,7 @@
       </ImageView>
       <TextField fx:id="email_text" layoutX="100.0" layoutY="497.0" prefHeight="51.0" prefWidth="335.0" text="email" />
       <TextField fx:id="password_text" layoutX="99.0" layoutY="570.0" prefHeight="51.0" prefWidth="337.0" text="password" />
-      <Button fx:id="login_button" layoutX="100.0" layoutY="663.0" mnemonicParsing="false" onAction="#login_click" prefHeight="48.0" prefWidth="334.0" style="-fx-background-color: #852222;" text="Login" textFill="#f0ece2">
+      <Button fx:id="login_button" layoutX="100.0" layoutY="663.0" mnemonicParsing="false" onAction="#login_click" prefHeight="48.0" prefWidth="344.0" style="-fx-background-color: #852222;" text="Login" textFill="#f0ece2">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>

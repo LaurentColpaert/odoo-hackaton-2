@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -15,27 +15,62 @@
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Label layoutX="97.0" layoutY="158.0" text="Date" textFill="#852222" />
-      <Label layoutX="98.0" layoutY="198.0" text="Place" textFill="#852222" />
-      <Label layoutX="101.0" layoutY="239.0" text="Tag" textFill="#852222" />
-      <Label layoutX="37.0" layoutY="103.0" text="Details" textFill="#852222">
+      <Label layoutX="75.0" layoutY="159.0" text="Date" textFill="#852222">
          <font>
-            <Font size="21.0" />
+            <Font size="30.0" />
          </font></Label>
-      <Label layoutX="67.0" layoutY="634.0" text="Feeling" textFill="#852222" />
-      <ComboBox fx:id="tag_choice" layoutX="178.0" layoutY="234.0" prefHeight="26.0" prefWidth="186.0" />
-      <Label layoutX="52.0" layoutY="370.0" text="Description" textFill="#852222" />
-      <ComboBox fx:id="place_choice" layoutX="176.0" layoutY="195.0" prefHeight="26.0" prefWidth="186.0" />
-      <TextArea fx:id="textarea_descriptoion" layoutX="51.0" layoutY="421.0" prefHeight="162.0" prefWidth="438.0" />
-      <CheckBox fx:id="sad_chechbox" layoutX="126.0" layoutY="728.0" mnemonicParsing="false" text="Sad" textFill="#852222" />
-      <CheckBox fx:id="verysad_chechbox" layoutX="30.0" layoutY="728.0" mnemonicParsing="false" text="Very Sad" textFill="#852222" />
-      <CheckBox fx:id="neutral_chechbox" layoutX="199.0" layoutY="728.0" mnemonicParsing="false" text="Neutral" textFill="#852222" />
-      <CheckBox fx:id="happy_chechbox" layoutX="295.0" layoutY="728.0" mnemonicParsing="false" text="Happy" textFill="#852222" />
-      <CheckBox fx:id="veryhappy_chechbox" layoutX="408.0" layoutY="728.0" mnemonicParsing="false" text="Very Happy" textFill="#852222" />
-      <Button fx:id="send_button" layoutX="218.0" layoutY="825.0" mnemonicParsing="false" onAction="#clicked_send" prefHeight="76.0" prefWidth="104.0" style="-fx-background-color: #238A8D;" text="Send" textFill="#f0ece2">
+      <Label layoutX="72.0" layoutY="220.0" text="Place" textFill="#852222">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label layoutX="78.0" layoutY="280.0" prefHeight="37.0" prefWidth="59.0" text="Tag" textFill="#852222">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label layoutX="47.0" layoutY="102.0" text="Details" textFill="#852222">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <Label layoutX="54.0" layoutY="635.0" text="Feeling" textFill="#852222">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <ComboBox fx:id="tag_choice" layoutX="157.0" layoutY="276.0" prefHeight="42.0" prefWidth="275.0" />
+      <Label layoutX="52.0" layoutY="370.0" text="Description" textFill="#852222">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <ComboBox fx:id="place_choice" layoutX="155.0" layoutY="215.0" prefHeight="42.0" prefWidth="278.0" />
+      <TextArea fx:id="textarea_descriptoion" layoutX="56.0" layoutY="443.0" prefHeight="148.0" prefWidth="427.0" />
+      <Button fx:id="send_button" layoutX="140.0" layoutY="826.0" mnemonicParsing="false" onAction="#clicked_send" prefHeight="76.0" prefWidth="285.0" style="-fx-background-color: #238A8D;" text="Send" textFill="#f0ece2">
          <font>
             <Font size="27.0" />
          </font></Button>
-      <DatePicker fx:id="date_experience" layoutX="178.0" layoutY="154.0" />
+      <DatePicker fx:id="date_experience" layoutX="154.0" layoutY="150.0" prefHeight="48.0" prefWidth="279.0" />
+      <RadioButton fx:id="verysad_radio" layoutX="5.0" layoutY="741.0" mnemonicParsing="false" text="Very Sad" textFill="#852222">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="sad_radio" layoutX="124.0" layoutY="736.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="122.0" text="Sad" textFill="#852222">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="neutral_radio" layoutX="201.0" layoutY="742.0" mnemonicParsing="false" text="Neutral" textFill="#852222">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="happy_radio" layoutX="301.0" layoutY="742.0" mnemonicParsing="false" text="Happy" textFill="#852222">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="veryhappy_radio" layoutX="399.0" layoutY="743.0" mnemonicParsing="false" text="Very Happy" textFill="#852222">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
    </children>
 </AnchorPane>

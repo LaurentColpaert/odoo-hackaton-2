@@ -2,39 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" fx:controller="controller.MatchController" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #852222;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchController">
    <children>
-      <Text layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Match n">
+      <Text fx:id="match_label" fill="#f0ece2" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Match n">
          <font>
             <Font size="41.0" />
          </font>
       </Text>
       <VBox layoutX="13.0" layoutY="68.0" prefHeight="818.0" prefWidth="515.0">
          <children>
-            <AnchorPane fx:id="capsule_to_click" onMouseClicked="#go_to_capsule" prefHeight="87.0" prefWidth="515.0">
+            <AnchorPane fx:id="capsule_to_click" onMouseClicked="#go_to_capsule" prefHeight="87.0" prefWidth="515.0" style="-fx-background-color: #F0ECE2; -fx-background-radius: 20;">
                <children>
-                  <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
-                  <Text layoutX="80.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capsule de &quot; mois &quot; + &quot;années&quot;">
+                  <Text fill="#852222" layoutX="80.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capsule de &quot; mois &quot; + &quot;années&quot;">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Text>
+                  <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="20.0" layoutY="23.0">
+                     <image>
+                        <Image url="@../../../../Downloads/Nouveau%20projet-4-3.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
       </VBox>
-      <Button layoutX="27.0" layoutY="902.0" mnemonicParsing="false" onAction="#clck_to_rturn_to_nu" prefHeight="31.0" prefWidth="90.0" text="Return">
+      <Button layoutX="140.0" layoutY="893.0" mnemonicParsing="false" onAction="#clck_to_rturn_to_nu" prefHeight="50.0" prefWidth="262.0" style="-fx-background-color: #238A8D;" text="Return" textFill="#f0ece2">
          <font>
-            <Font size="16.0" />
+            <Font size="24.0" />
          </font>
       </Button>
-      <ScrollBar fx:id="scroll_bar" layoutX="521.0" layoutY="68.0" orientation="VERTICAL" prefHeight="818.0" prefWidth="14.0" />
+      <ScrollBar fx:id="scroll_bar" layoutX="521.0" layoutY="68.0" orientation="VERTICAL" prefHeight="818.0" prefWidth="14.0" style="-fx-background-color: #852222;" />
    </children>
 </AnchorPane>
