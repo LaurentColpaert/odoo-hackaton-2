@@ -15,7 +15,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/pagegarde.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 540, 960);
         stage.setTitle("Hello!");
         stage.setScene(scene);

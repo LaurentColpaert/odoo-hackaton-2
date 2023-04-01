@@ -1,8 +1,6 @@
 package controller;
 
 import database.Request;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +13,6 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import utils.Login;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,10 +77,10 @@ public class ExperienceController {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
 //        stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/pagegarde.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
 
             Parent root  = loader.load();
-            PageDeGardeController main = loader.getController();
+            LoginController main = loader.getController();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {

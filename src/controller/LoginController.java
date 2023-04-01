@@ -11,9 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class PageDeGardeController {
+public class LoginController {
 
     @FXML
     private TextField email_text;
