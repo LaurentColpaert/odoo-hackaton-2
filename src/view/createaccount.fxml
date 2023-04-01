@@ -40,21 +40,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" fx:controller="controller.CreateAccountController" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: f0ece2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAccountController">
    <children>
       <TextField fx:id="email_text" layoutX="90.0" layoutY="236.0" prefHeight="51.0" prefWidth="315.0" text="email" />
       <TextField fx:id="password_text" layoutX="90.0" layoutY="311.0" prefHeight="51.0" prefWidth="315.0" text="password" />
-      <Button fx:id="signup_button" layoutX="241.0" layoutY="806.0" mnemonicParsing="false" onAction="#signup_click" text="Sign Up" />
-      <Button fx:id="picture_button" layoutX="243.0" layoutY="106.0" mnemonicParsing="false" onAction="#picture_click" text="Picture" />
+      <Button fx:id="signup_button" layoutX="184.0" layoutY="784.0" mnemonicParsing="false" onAction="#signup_click" prefHeight="50.0" prefWidth="147.0" style="-fx-background-color: #238A8D;" text="Sign Up" textFill="#f0ece2">
+         <font>
+            <Font size="26.0" />
+         </font></Button>
+      <Button fx:id="picture_button" layoutX="195.0" layoutY="54.0" mnemonicParsing="false" onAction="#picture_click" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 90; -fx-background-color: #852222;" text="Upload Picture" textFill="#f0ece2">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
       <TextField fx:id="username_text" layoutX="90.0" layoutY="456.0" prefHeight="51.0" prefWidth="315.0" text="User name" />
       <TextField fx:id="age_text" layoutX="90.0" layoutY="528.0" prefHeight="51.0" prefWidth="315.0" text="Age" />
       <ChoiceBox fx:id="gender_choicebox" layoutX="175.0" layoutY="617.0" prefHeight="26.0" prefWidth="163.0" />
-      <Text layoutX="97.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
-      <CheckBox fx:id="english_checkbox" layoutX="181.0" layoutY="668.0" mnemonicParsing="false" text="English" />
-      <Text layoutX="97.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Languages" />
-      <CheckBox fx:id="french_checkbox" layoutX="181.0" layoutY="710.0" mnemonicParsing="false" text="French" />
-      <Text layoutX="97.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Informations" wrappingWidth="297.7902545928955">
+      <Text fill="#852222" layoutX="97.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
+      <CheckBox fx:id="english_checkbox" layoutX="181.0" layoutY="668.0" mnemonicParsing="false" text="English" textFill="#852222" />
+      <Text fill="#852222" layoutX="97.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Languages" />
+      <CheckBox fx:id="french_checkbox" layoutX="181.0" layoutY="710.0" mnemonicParsing="false" text="French" textFill="#852222" />
+      <Text fill="#852222" layoutX="97.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Informations" wrappingWidth="297.7902545928955">
          <font>
             <Font size="26.0" />
          </font>
