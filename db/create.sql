@@ -43,8 +43,8 @@ CREATE TABLE "experience" (
 CREATE TABLE "tag" (
 	"id_tag"	INTEGER,
 	"tag"	TEXT NOT NULL,
-	PRIMARY KEY("id_tag" AUTOINCREMENT)
-)
+	PRIMARY KEY("id_tag" )
+);
 
 CREATE TABLE "tag_experience" (
 	"id_tag"	INTEGER,
