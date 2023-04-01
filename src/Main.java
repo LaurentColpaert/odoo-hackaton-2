@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/pagegarde.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 540, 960);
-        stage.setTitle("Hello!");
+        stage.setTitle("Little Steps");
         stage.setScene(scene);
         stage.show();
     }
