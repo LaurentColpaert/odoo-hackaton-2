@@ -83,8 +83,7 @@ public class ExperienceController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/pagegarde.fxml"));
 
             Parent root  = loader.load();
-            ExperienceController main = loader.getController();
-            main.setup();
+            PageDeGardeController main = loader.getController();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {

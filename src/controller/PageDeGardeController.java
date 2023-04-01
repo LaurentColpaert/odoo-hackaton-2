@@ -47,7 +47,19 @@ public class PageDeGardeController {
 
     @FXML
     void signup_click(ActionEvent event) {
+        try{
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+    //        stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/createaccount.fxml"));
 
+            Parent root  = loader.load();
+            CreateAccountController controller = loader.getController();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
 
 }
