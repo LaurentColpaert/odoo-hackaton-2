@@ -6,7 +6,7 @@ public class Main {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:C:\\Users\\Ahmed\\Desktop\\HACKITOS\\little_step.db";
+            String url = "jdbc:sqlite:"+System.getProperty("user.dir")+"/db/little_step.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
 
