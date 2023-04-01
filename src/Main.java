@@ -1,15 +1,28 @@
-import database.Request;
-import model.Person;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.util.ArrayList;
+public class Main extends Application {
 
-public class Main {
+    private double xOffset = 0;
+    private double yOffset = 0;
 
-    public static void main(String[] args) throws Exception{
-        Request.test();
-        ArrayList<Person> persons = Request.getPersons();
-        for (Person person : persons){
-            System.out.println(person);
-        }
+    /**
+     * Start the login scene and allow the scene to be resizable on click and drag
+     * @param stage
+     * @throws Exception
+     */
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/pagegarde.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 540, 960);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

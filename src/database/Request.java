@@ -17,7 +17,7 @@ public class Request {
             while (rs.next()) {
                 int id = rs.getInt("id_person");
                 String name = rs.getString("name");
-                String age = rs.getString("age");
+                int age = rs.getInt("age");
                 int gender = rs.getInt("gender");
                 String country = rs.getString("country");
                 ArrayList<Capsule> capsules = getCapsules(id);
@@ -36,7 +36,7 @@ public class Request {
         String query = "select language.language" +
                 " from language,language_person, person " +
                 " where person.id_person = ? and language_person.id_person == person.id_person and " +
-                "language.id_language == language_person.id_language";
+                "language.id_language == language_person.id_language ";
         try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
             stmt.setInt(1,id);
             ResultSet rs = stmt.executeQuery();
@@ -120,6 +120,49 @@ public class Request {
         ResultSet tables = metaData.getTables(null, null, "%", types);
         while (tables.next()) {
             System.out.println(tables.getString("TABLE_NAME"));
+        }
+    }
+
+    public static void insertPerson( Person person) {
+        String sql = "INSERT INTO person(name, age, gender, country) VALUES(?,?,?,?)";
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, person.getName());
+            pstmt.setInt(2, person.getAge());
+            pstmt.setInt(3, person.getGender());
+            pstmt.setString(4, person.getCountry());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void insertCapsule( int id_person, String date_begin,  String date_end) {
+        String sql = "INSERT INTO personne(id_person, date_begin, date_end) VALUES(?,?,?)";
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id_person);
+            pstmt.setString(2, date_begin);
+            pstmt.setString(3, date_end);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void insertExperience( int id_capsule, String date,  String place) {
+        String sql = "INSERT INTO personne(id_capsule, date, place) VALUES(?,?,?)";
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id_capsule);
+            pstmt.setString(2, date);
+            pstmt.setString(3, place);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 }

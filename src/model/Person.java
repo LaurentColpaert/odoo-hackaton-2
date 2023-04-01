@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Person {
     private int id_person;
     private String name;
-    private String age;
+    private int age;
     private int gender;
     private String country;
     private ArrayList<String> languages;
@@ -13,12 +13,12 @@ public class Person {
     private ArrayList<Capsule> capsules;
 
 
-    public Person(int id_person, String name, String age, int gender, String country, ArrayList<String> languages, ArrayList<Capsule> capsules) {
+    public Person(int id_person, String name, int age, int gender, String country, ArrayList<String> languages, ArrayList<Capsule> capsules) {
         this(id_person,name,age,gender,country,capsules);
         this.languages = languages;
     }
 
-    public Person(int id_person, String name, String age, int gender, String country) {
+    public Person(int id_person, String name, int age, int gender, String country) {
         this.id_person = id_person;
         this.name = name;
         this.age = age;
@@ -26,7 +26,7 @@ public class Person {
         this.country = country;
     }
 
-    public Person(int id, String name, String age, int gender, String country, ArrayList<Capsule> capsules) {
+    public Person(int id, String name, int age, int gender, String country, ArrayList<Capsule> capsules) {
         this(id, name, age, gender, country);
         this.capsules = capsules;
     }
@@ -47,11 +47,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

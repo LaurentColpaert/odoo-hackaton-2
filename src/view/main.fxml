@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" fx:controller="controller.MainController" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="return_button" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#click_return" text="Return" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="8.0" />
+      <TextField layoutX="196.0" layoutY="154.0" />
+      <Label layoutX="97.0" layoutY="158.0" text="Date" />
+      <Label layoutX="97.0" layoutY="195.0" text="Place" />
+      <Label layoutX="97.0" layoutY="238.0" text="Tag" />
+      <Label layoutX="46.0" layoutY="119.0" text="Details" />
+      <Label layoutX="67.0" layoutY="634.0" text="Feeling" />
+      <ChoiceBox fx:id="tag_choice" layoutX="196.0" layoutY="234.0" prefWidth="150.0" />
+      <Label layoutX="52.0" layoutY="370.0" text="Description" />
+      <ChoiceBox fx:id="place_choice" layoutX="195.0" layoutY="191.0" prefWidth="150.0" />
+      <TextArea fx:id="textarea_descriptoion" layoutX="51.0" layoutY="421.0" prefHeight="162.0" prefWidth="438.0" />
+      <CheckBox fx:id="sad_chechbox" layoutX="102.0" layoutY="729.0" mnemonicParsing="false" text="Sad" />
+      <CheckBox fx:id="verysad_chechbox" layoutX="6.0" layoutY="729.0" mnemonicParsing="false" text="Very Sad" />
+      <CheckBox fx:id="neutral_chechbox" layoutX="175.0" layoutY="729.0" mnemonicParsing="false" text="Neutral" />
+      <CheckBox fx:id="happy_chechbox" layoutX="271.0" layoutY="729.0" mnemonicParsing="false" text="Happy" />
+      <CheckBox fx:id="veryhappy_chechbox" layoutX="384.0" layoutY="729.0" mnemonicParsing="false" text="Very Happy" />
+      <Button fx:id="send_button" layoutX="415.0" layoutY="889.0" mnemonicParsing="false" onAction="#clicked_send" text="Send" />
+   </children>
+</AnchorPane>

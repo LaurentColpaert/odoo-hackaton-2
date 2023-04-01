@@ -11,60 +11,91 @@ INSERT INTO tag (id_tag, tag) VALUES
 (89, 'Powerful'),(90, 'Delicate'),(91, 'Nurturing'),(92, 'Aggressive'),(93, 'Passive'),(94, 'Dynamic'),(95, 'Static'),(96, 'Fast-paced'),(97, 'Slow-paced'),
 (98, 'Uplifting'),(99, 'Depressing'),(100, 'Romantic');
 
--- insert sample person data
-INSERT INTO person (name, age, gender, country) VALUES 
-    ('John Smith', 25, 1, 'USA'),
-    ('Jane Doe', 30, 2, 'Canada'),
-    ('Bob Johnson', 45, 1, 'Australia'),
-    ('Mary Williams', 28, 2, 'UK');
+-- Insert into person table
+INSERT INTO person (name, age, gender, country)
+VALUES ('John Doe', 35, 0, 'USA'),
+       ('Jane Smith', 28, 1, 'Canada'),
+       ('Peter Parker', 21, 0, 'USA'),
+       ('Mary Jane', 22, 1, 'USA'),
+       ('Tony Stark', 45, 0, 'USA'),
+       ('Natasha Romanoff', 32, 1, 'Russia');
 
--- insert sample language data
-INSERT INTO language (language) VALUES 
-    ('English'),
-    ('French'),
-    ('Spanish'),
-    ('Chinese');
+-- Insert into language table
+INSERT INTO language (language)
+VALUES ('English'),
+       ('French'),
+       ('Spanish'),
+       ('German'),
+       ('Mandarin'),
+       ('Japanese');
 
--- insert sample language_person data
-INSERT INTO language_person (id_person, id_language) VALUES 
-    (1, 1),
-    (1, 2),
-    (2, 1),
-    (2, 3),
-    (3, 1),
-    (4, 2),
-    (4, 3),
-    (4, 4);
+-- Insert into language_person table
+INSERT INTO language_person (id_person, id_language)
+VALUES (1, 1),
+       (1, 2),
+       (2, 1),
+       (2, 3),
+       (3, 1),
+       (4, 1),
+       (4, 2),
+       (5, 1),
+       (5, 4),
+       (6, 1),
+       (6, 3);
 
--- insert sample capsule data
-INSERT INTO capsule (id_person, date_begin, date_end) VALUES 
-    (1, '2022-01-01', '2023-01-01'),
-    (2, '2022-02-01', '2023-02-01'),
-    (3, '2022-03-01', '2023-03-01'),
-    (4, '2022-04-01', '2023-04-01');
-
--- insert sample experience data
-INSERT INTO experience (id_capsule, date, place) VALUES 
-    (1, '2022-01-10', 'New York'),
-    (1, '2022-02-10', 'Paris'),
-    (2, '2022-03-10', 'Madrid'),
-    (3, '2022-04-10', 'Sydney'),
-    (3, '2022-05-10', 'London'),
-    (4, '2022-06-10', 'Beijing'),
-    (4, '2022-07-10', 'Tokyo');
+-- Insert into capsule table
+INSERT INTO capsule (id_person, date_begin, date_end)
+VALUES
+    (1, '2022-01-01', '2022-12-31'),
+    (1, '2023-01-01', '2023-12-31'),
+    (2, '2022-06-01', '2022-11-30'),
+    (2, '2023-06-01', '2023-11-30'),
+    (3, '2022-03-01', '2022-08-31'),
+    (3, '2023-03-01', '2023-08-31'),
+    (4, '2022-04-01', '2022-09-30'),
+    (5, '2022-02-01', '2022-07-31'),
+    (5, '2023-02-01', '2023-07-31'),
+    (6, '2022-05-01', '2022-10-31'),
+    (6, '2023-05-01', '2023-10-31');
 
 
--- insert sample tag_experience data
-INSERT INTO tag_experience (id_tag, id_experience) VALUES 
-    (1, 1),
-    (2, 1),
-    (2, 2),
-    (3, 2),
-    (3, 3),
-    (4, 3),
-    (4, 5),
-    (5, 4),
-    (5, 7),
-    (6, 6),
-    (7, 5),
-    (8, 4);
+INSERT INTO experience (id_capsule, date, place)
+SELECT
+    -- Randomly select a capsule ID
+    (SELECT id_capsule FROM capsule ORDER BY RANDOM() LIMIT 1),
+    -- Generate a random date between 2020-01-01 and 2023-04-01
+    strftime('%Y-%m-%d %H:%M:%S', CAST((julianday('2023-04-01') - julianday('2020-01-01')) * RANDOM() + julianday('2020-01-01') AS INTEGER)),
+    -- Generate a random place from a list
+    CASE CAST(RANDOM() * 10 AS INTEGER)
+        WHEN 0 THEN 'New York'
+        WHEN 1 THEN 'Paris'
+        WHEN 2 THEN 'Tokyo'
+        WHEN 3 THEN 'Sydney'
+        WHEN 4 THEN 'London'
+        WHEN 5 THEN 'Rio de Janeiro'
+        WHEN 6 THEN 'Moscow'
+        WHEN 7 THEN 'Hong Kong'
+        WHEN 8 THEN 'Dubai'
+        WHEN 9 THEN 'Los Angeles'
+        END
+FROM
+    -- Repeat for each person and capsule combination
+    (SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6) persons,
+    (SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4) capsules
+LIMIT 50;
+
+
+-- Insert into tag_experience table
+INSERT INTO tag_experience (id_tag, id_experience)
+VALUES (1, 1),
+       (2, 1),
+       (2, 2),
+       (3, 2),
+       (1, 3),
+       (4, 3),
+       (1, 4),
+       (5, 4),
+       (1, 5),
+       (6, 5),
+       (1, 6),
+       (6, 6);
