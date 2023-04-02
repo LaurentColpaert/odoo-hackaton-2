@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #f0ece2;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExperienceController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #f0ece2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExperienceController">
    <children>
-      <Button fx:id="return_button" layoutX="38.0" layoutY="19.0" mnemonicParsing="false" onAction="#click_return" prefHeight="57.0" prefWidth="80.0" style="-fx-background-color: #852222;" text="Return" textFill="#f0ece2" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="19.0">
+      <Button fx:id="return_button" layoutX="53.0" layoutY="836.0" mnemonicParsing="false" onAction="#click_return" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #852222;" text="Cancel" textFill="#f0ece2" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="836.0">
          <font>
-            <Font size="19.0" />
+            <Font size="27.0" />
          </font></Button>
       <Label layoutX="75.0" layoutY="159.0" text="Date" textFill="#852222">
          <font>
@@ -42,7 +42,7 @@
          </font></Label>
       <ComboBox fx:id="place_choice" layoutX="155.0" layoutY="215.0" prefHeight="42.0" prefWidth="278.0" />
       <TextArea fx:id="textarea_descriptoion" layoutX="56.0" layoutY="443.0" prefHeight="148.0" prefWidth="427.0" />
-      <Button fx:id="send_button" layoutX="140.0" layoutY="826.0" mnemonicParsing="false" onAction="#clicked_send" prefHeight="76.0" prefWidth="285.0" style="-fx-background-color: #238A8D;" text="Send" textFill="#f0ece2">
+      <Button fx:id="send_button" layoutX="284.0" layoutY="836.0" mnemonicParsing="false" onAction="#clicked_send" prefHeight="64.0" prefWidth="193.0" style="-fx-background-color: #238A8D;" text="Send" textFill="#f0ece2">
          <font>
             <Font size="27.0" />
          </font></Button>

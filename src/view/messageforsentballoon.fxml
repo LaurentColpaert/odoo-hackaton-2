@@ -33,28 +33,38 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #F0ECE2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MessageSentBalloonController">
    <children>
-      <Button fx:id="back_to_menu" layoutX="110.0" layoutY="819.0" mnemonicParsing="false" onAction="#click_to_back_to_menu" prefHeight="86.0" prefWidth="332.0" style="-fx-background-color: #238a8d;" text="Back to Menu" textFill="#f0ece2">
+      <Button fx:id="back_to_menu" layoutX="116.0" layoutY="770.0" mnemonicParsing="false" onAction="#click_to_back_to_menu" prefHeight="74.0" prefWidth="309.0" style="-fx-background-color: #238a8d;" text="Back to Menu" textFill="#f0ece2">
          <font>
-            <Font size="45.0" />
+            <Font size="23.0" />
          </font>
       </Button>
-      <Text fill="#852222" layoutX="58.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balloon is sent">
+      <Text fill="#852222" layoutX="158.0" layoutY="563.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balloon is sent" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <ImageView fitHeight="268.0" fitWidth="235.0" layoutX="273.0" layoutY="263.0">
-         <image>
-            <Image url="@../../../../Downloads/Nouveau%20projet-4-3.png" />
-         </image>
-      </ImageView>
+      <CubicCurve controlX1="-50.0" controlX2="24.0" controlY1="-100.0" controlY2="-22.0" endX="27.5" endY="-113.0" fill="#dceeff" layoutX="247.0" layoutY="441.0" startX="-63.0" startY="56.0" stroke="BLACK" style="-fx-fill: #F0ECE2;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="268.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #852222;" width="9.0" />
+      <Ellipse fill="WHITE" layoutX="198.0" layoutY="69.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="285.0" layoutY="61.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="274.0" layoutY="90.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="378.0" layoutY="89.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="418.0" layoutY="128.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="324.0" layoutY="148.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="224.0" layoutY="144.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="133.0" layoutY="130.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="104.0" layoutY="110.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="202.0" layoutY="102.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="285.0" layoutY="115.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="DODGERBLUE" layoutX="285.0" layoutY="262.0" radiusX="64.0" radiusY="50.0" rotate="100.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #852222;" />
    </children>
 </AnchorPane>
