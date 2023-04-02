@@ -31,6 +31,13 @@ public class Person {
         this.capsules = capsules;
     }
 
+    public Person( String name, int age, int gender, ArrayList<String> languages) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.country = "Belgium";
+    }
+
     public int getId_person() {
         return id_person;
     }

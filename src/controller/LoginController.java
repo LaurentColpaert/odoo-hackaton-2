@@ -54,6 +54,7 @@ public class LoginController {
 
             Parent root  = loader.load();
             CreateAccountController controller = loader.getController();
+            controller.setup_gender_choice();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
