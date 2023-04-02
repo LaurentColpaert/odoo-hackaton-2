@@ -72,7 +72,7 @@ public class Request {
         return capsules;
     }
 
-    private static ArrayList<Experience> getExperiences(int id_capsule) {
+    public static ArrayList<Experience> getExperiences(int id_capsule) {
         ArrayList<Experience> experiences = new ArrayList<>();
 
         String query = "select experience.id_experience, experience.date, experience.place" +
@@ -269,4 +269,23 @@ public class Request {
         }
         return person;
     }
+
+    public static ArrayList<Integer> getMatch(int id) {
+        ArrayList<Integer> matches  = new ArrayList<>();
+
+        String query = "select match.t " +
+                "from match where match.f == ?";
+        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
+            stmt.setInt(1,id);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                int to = rs.getInt("t");
+                matches.add(to);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return matches;
+    }
+
 }

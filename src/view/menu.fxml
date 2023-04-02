@@ -18,31 +18,7 @@
             <Image url="@../assets/profil.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ppfil" fitHeight="49.0" fitWidth="49.0" layoutX="29.0" layoutY="212.0" onMouseClicked="#clicked_match" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/ppeofilfille.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="ppfil1" fitHeight="49.0" fitWidth="49.0" layoutX="90.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/peofillg.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="ppfil2" fitHeight="49.0" fitWidth="49.0" layoutX="165.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/peofillg.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="ppfil3" fitHeight="49.0" fitWidth="49.0" layoutX="239.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/ppeofilfille.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="pseudo_profil_label" fitHeight="49.0" fitWidth="49.0" layoutX="305.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/peofillg.jpg" />
-         </image>
-      </ImageView>
+
       <HBox fx:id="box_match" layoutX="21.0" layoutY="116.0" prefHeight="57.0" prefWidth="436.0" />
    </children>
 </AnchorPane>

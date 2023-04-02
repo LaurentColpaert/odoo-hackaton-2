@@ -16,25 +16,10 @@
             <Font size="41.0" />
          </font>
       </Text>
-      <VBox layoutX="13.0" layoutY="68.0" prefHeight="818.0" prefWidth="515.0">
-         <children>
-            <AnchorPane fx:id="capsule_to_click" onMouseClicked="#go_to_capsule" prefHeight="87.0" prefWidth="515.0" style="-fx-background-color: #F0ECE2; -fx-background-radius: 20;">
-               <children>
-                  <Text fill="#852222" layoutX="80.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capsule de &quot; mois &quot; + &quot;années&quot;">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="20.0" layoutY="23.0">
-                     <image>
-                        <Image url="@../../../../Downloads/Nouveau%20projet-4-3.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-         </children>
+      <VBox fx:id="vbox" layoutX="13.0" layoutY="68.0" prefHeight="818.0" prefWidth="515.0">
+
       </VBox>
-      <Button layoutX="140.0" layoutY="893.0" mnemonicParsing="false" onAction="#clck_to_rturn_to_nu" prefHeight="50.0" prefWidth="262.0" style="-fx-background-color: #238A8D;" text="Return" textFill="#f0ece2">
+      <Button layoutX="160.0" layoutY="893.0" mnemonicParsing="false" onAction="#clck_to_rturn_to_nu" prefHeight="50.0" prefWidth="262.0" style="-fx-background-color: #238A8D;" text="Return" textFill="#f0ece2">
          <font>
             <Font size="24.0" />
          </font>

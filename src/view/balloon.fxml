@@ -8,14 +8,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.VBox?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #852222;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BalloonController">
    <children>
-      <Text fill="#f0ece2" layoutX="24.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balloon n">
+      <Text fill="#f0ece2" layoutX="24.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balloon">
          <font>
             <Font size="41.0" />
          </font>
       </Text>
-      <Pane layoutX="14.0" layoutY="83.0" prefHeight="818.0" prefWidth="513.0" style="-fx-background-color: #F0ECE2; -fx-background-radius: 20;" />
+      <Pane layoutX="14.0" layoutY="83.0" prefHeight="818.0" prefWidth="513.0" style="-fx-background-color: #F0ECE2; -fx-background-radius: 20;">
+         <VBox fx:id="vbox">
+
+         </VBox>
+      </Pane>
       <Button layoutX="170.0" layoutY="907.0" mnemonicParsing="false" onAction="#clck_to_rturn_to_tch" prefHeight="41.0" prefWidth="219.0" style="-fx-background-color: #238A8D;" text="Return" textFill="#f0ece2">
          <font>
             <Font size="21.0" />
