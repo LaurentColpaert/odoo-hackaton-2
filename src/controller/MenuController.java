@@ -76,8 +76,36 @@ public class MenuController {
     }
 
     public void clicked_profile(MouseEvent mouseEvent) {
+        try{
+            Node node = (Node) mouseEvent.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+//        stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/modifierprofil.fxml"));
+
+            Parent root  = loader.load();
+            ModifierProfilController main = loader.getController();
+            main.setup();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
 
     public void clicked_match(MouseEvent mouseEvent) {
+        try{
+            Node node = (Node) mouseEvent.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+//        stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/matchn.fxml"));
+
+            Parent root  = loader.load();
+            MatchController main = loader.getController();
+            main.setup();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
 }

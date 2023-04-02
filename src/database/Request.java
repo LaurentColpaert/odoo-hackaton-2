@@ -137,8 +137,11 @@ public class Request {
     }
 
     public static void insertPerson( Person person) {
-        String sql = "INSERT INTO person(name, age, gender, country) VALUES(?,?,?,?)";
+        boolean languagehere = false;
+        ArrayList<String> languages = new ArrayList<>();
 
+        //partie de la table personne
+        String sql = "INSERT INTO personne(name, age, gender, country) VALUES(?,?,?,?)";
         try (Connection conn = DatabaseConnection.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, person.getName());
@@ -149,6 +152,37 @@ public class Request {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+//        //partie de la langue
+//        String query = "select * from language ";
+//        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next()) {
+//                languages.add(rs.getString("language"));
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        for (String langue:languages){
+//            if(langue==language){
+//                languagehere = true;
+//
+//            }
+//        }
+//
+//
+//        if(languagehere){
+//            String querylangue = "SELECT id_language FROM language WHERE language = ?  ";
+//            try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(querylangue)) {
+//                stmt.setString(1,language);
+//                ResultSet rs = stmt.executeQuery();
+//                languages.add(rs.getString("language"));
+//            } catch (SQLException e) {
+//                throw new RuntimeException(e);
+//            }
+//
+//        }
+
+
     }
 
     public static void insertCapsule( int id_person, String date_begin,  String date_end) {
