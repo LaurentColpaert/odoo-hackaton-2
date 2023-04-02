@@ -86,7 +86,7 @@ public class Request {
                 String date = rs.getString("date");
                 String place = rs.getString("place");
                 ArrayList<String> tags = getTag(id_experience);
-                experiences.add(new Experience(id_capsule,date,place,tags));
+                experiences.add(new Experience(id_capsule, id_capsule, date,place,tags));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -165,18 +165,66 @@ public class Request {
         }
     }
 
-    public static void insertExperience( int id_capsule, String date,  String place) {
-        String sql = "INSERT INTO personne(id_capsule, date, place) VALUES(?,?,?)";
+    public static void insertExperience( Experience experience) {
+        String sql = "INSERT INTO experience(id_capsule, date, place) VALUES(?,?,?)";
 
         try (Connection conn = DatabaseConnection.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, id_capsule);
-            pstmt.setString(2, date);
-            pstmt.setString(3, place);
+            pstmt.setInt(1, experience.getId_capsule());
+            pstmt.setString(2, experience.getDate());
+            pstmt.setString(3, experience.getPlace());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        int id_experience = getExperienceID(experience);
+        int id_tag = getTagID(experience);
+        insertTagExperience(id_tag, id_experience);
+    }
+
+    private static int getTagID(Experience experience) {
+        int id = 0;
+        String query = "select id_tag" +
+                " from tag " +
+                " where tag == ?";
+        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
+            stmt.setString(1, experience.getTags().get(0));
+            ResultSet rs = stmt.executeQuery();
+            id = rs.getInt("id_tag");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return id;
+    }
+
+    private static void insertTagExperience(int id_tag, int id_experience) {
+        String sql = "INSERT INTO tag_experience(id_tag, id_experience) VALUES(?,?)";
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id_tag);
+            pstmt.setInt(2, id_experience);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static int getExperienceID(Experience experience) {
+        int id = 0;
+        String query = "select id_experience" +
+                " from experience " +
+                " where id_capsule == ? and date == ? and place == ?";
+        try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
+            stmt.setInt(1, experience.getId_capsule());
+            stmt.setString(2, experience.getDate());
+            stmt.setString(3, experience.getPlace());
+            ResultSet rs = stmt.executeQuery();
+            id = rs.getInt("id_experience");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return id;
     }
 
     public static Person getPerson(int i) {

@@ -11,11 +11,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import model.Capsule;
+import model.Experience;
 import utils.Login;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class ExperienceController {
 
@@ -76,7 +79,10 @@ public class ExperienceController {
         String place = place_choice.getValue();
         String date = date_experience.toString();
         String description = textarea_descriptoion.getText();
-        System.out.println(Login.getInstance().getPerson());
+
+        Capsule capsule = Login.getInstance().getCapsule();
+        Experience experience = new Experience(capsule.getId_capsule(), date,place,new ArrayList<String>(Collections.singleton(tag)));
+        Request.insertExperience(experience);
     }
     @FXML
     void clicked_send(ActionEvent event) {
