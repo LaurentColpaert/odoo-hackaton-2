@@ -75,7 +75,7 @@ public class Request {
     public static ArrayList<Experience> getExperiences(int id_capsule) {
         ArrayList<Experience> experiences = new ArrayList<>();
 
-        String query = "select experience.id_experience, experience.date, experience.place" +
+        String query = "select experience.id_experience, experience.date, experience.place, experience.description" +
                 " from experience, capsule " +
                 " where capsule.id_capsule = ? and capsule.id_capsule == experience.id_capsule";
         try (PreparedStatement stmt = DatabaseConnection.getInstance().getConnection().prepareStatement(query)) {
@@ -85,8 +85,9 @@ public class Request {
                 int id_experience = rs.getInt("id_experience");
                 String date = rs.getString("date");
                 String place = rs.getString("place");
+                String description = rs.getString("description");
                 ArrayList<String> tags = getTag(id_experience);
-                experiences.add(new Experience(id_capsule, id_capsule, date,place,tags));
+                experiences.add(new Experience(id_capsule, id_capsule, date,place,tags, description));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -188,13 +189,14 @@ public class Request {
 
 
     public static void insertExperience( Experience experience) {
-        String sql = "INSERT INTO experience(id_capsule, date, place) VALUES(?,?,?)";
+        String sql = "INSERT INTO experience(id_capsule, date, place,description) VALUES(?,?,?,?)";
 
         try (Connection conn = DatabaseConnection.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, experience.getId_capsule());
             pstmt.setString(2, experience.getDate());
             pstmt.setString(3, experience.getPlace());
+            pstmt.setString(4, experience.getDescription());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

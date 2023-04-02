@@ -90,8 +90,11 @@ public class ExperienceController {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate = dateFormat.format(date);
 
+        String desc = textarea_descriptoion.getText();
+
+
         Capsule capsule = Login.getInstance().getCapsule();
-        Experience experience = new Experience(capsule.getId_capsule(), strDate,place,new ArrayList<String>(Collections.singleton(tag)));
+        Experience experience = new Experience(capsule.getId_capsule(), strDate,place,new ArrayList<String>(Collections.singleton(tag)),desc);
         Request.insertExperience(experience);
     }
     @FXML

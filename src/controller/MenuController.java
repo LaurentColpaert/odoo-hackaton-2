@@ -130,7 +130,7 @@ public class MenuController {
         im.setPrefHeight(49);
         im.setPrefWidth(49);
         im.setPickOnBounds(true);
-        im.setStyle("-fx-background-color: #852222;");
+        im.setStyle("-fx-background-color: #852222; -fx-background-radius: 90");
         return im;
     }
 

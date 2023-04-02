@@ -4,22 +4,23 @@ import java.util.ArrayList;
 
 public class Experience {
     private int id_experience;
-
+    private String description;
     private int id_capsule;
     private String date;
     private String place;
     private ArrayList<String> tags;
 
-    public Experience(int id_experience, int id_capsule, String date, String place, ArrayList<String> tags) {
-        this(id_capsule,date,place,tags);
+    public Experience(int id_experience, int id_capsule, String date, String place, ArrayList<String> tags, String description) {
+        this(id_capsule,date,place,tags, description);
         this.id_experience = id_experience;
     }
 
-    public Experience( int id_capsule, String date, String place, ArrayList<String> tags) {
+    public Experience( int id_capsule, String date, String place, ArrayList<String> tags,String description) {
         this.id_capsule = id_capsule;
         this.date = date;
         this.place = place;
         this.tags = tags;
+        this.description = description;
     }
     @Override
     public String toString() {
@@ -69,5 +70,13 @@ public class Experience {
 
     public void setId_capsule(int id_capsule) {
         this.id_capsule = id_capsule;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

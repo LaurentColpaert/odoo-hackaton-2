@@ -57,10 +57,10 @@ public class BalloonController {
         AnchorPane pane = new AnchorPane();
         pane.setPrefSize(480,90);
         pane.setStyle("-fx-background-color: #852222; -fx-background-radius: 20;");
-        Text text = new Text("Place : "+experience.getPlace()+" \nDate : "+ experience.getDate());
+        Text text = new Text("Place : "+experience.getPlace()+" \nDate : "+ experience.getDate() + "\n" + experience.getDescription());
         text.setFill(Color.web("#F0ECE2",1.0));
         text.setLayoutX(10);
-        text.setLayoutY(50);
+        text.setLayoutY(30);
         text.setStrokeType(StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setFont(new Font("System",23));

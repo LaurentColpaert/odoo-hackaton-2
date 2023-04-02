@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #f0ece2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
-      <Button fx:id="sendtosky_button" layoutX="175.0" layoutY="842.0" mnemonicParsing="false" onAction="#click_sendtosky" text="Send a balloon to the sky" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="842.0" />
-      <Label fx:id="profil_label" layoutX="124.0" layoutY="46.0" text="Name" />
-      <Label layoutX="14.0" layoutY="287.0" text="Balloons you might like" />
-      <Button fx:id="balloon" layoutX="50.0" layoutY="364.0" mnemonicParsing="false" onAction="#clicked_balloon" text="Balloon" />
-      <ImageView fx:id="image_profil" fitHeight="77.0" fitWidth="80.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#clicked_profile" pickOnBounds="true" preserveRatio="true">
+      <Ellipse fill="WHITE" layoutX="126.0" layoutY="817.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <CubicCurve controlX1="-50.0" controlX2="24.0" controlY1="-100.0" controlY2="-22.0" endX="27.5" endY="-113.0" fill="#dceeff" layoutX="242.0" layoutY="660.0" startX="-63.0" startY="56.0" stroke="BLACK" style="-fx-fill: #F0ECE2;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="263.0" layoutY="528.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #852222;" width="9.0" />
+      <Label fx:id="profil_label" layoutX="217.0" layoutY="47.0" text="Name" textAlignment="CENTER" textFill="#852222">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <ImageView fx:id="image_profil" fitHeight="77.0" fitWidth="80.0" layoutX="232.0" layoutY="113.0" onMouseClicked="#clicked_profile" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/profil.png" />
          </image>
       </ImageView>
 
-      <HBox fx:id="box_match" layoutX="21.0" layoutY="116.0" prefHeight="57.0" prefWidth="436.0" />
+      <HBox fx:id="box_match" layoutX="52.0" layoutY="271.0" prefHeight="57.0" prefWidth="436.0">
+         <padding>
+            <Insets right="15.0" />
+         </padding></HBox>
+      <Label layoutX="53.0" layoutY="230.0" text="Matches" textFill="#852222">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="balloon" layoutX="201.0" layoutY="417.0" mnemonicParsing="false" onAction="#clicked_balloon" prefHeight="130.0" prefWidth="137.0" style="-fx-background-color: #852222; -fx-background-radius: 360;" text="Balloon" textFill="#f0ece2">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+      <Ellipse fill="WHITE" layoutX="203.0" layoutY="804.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="290.0" layoutY="796.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="279.0" layoutY="825.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="383.0" layoutY="824.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="423.0" layoutY="863.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="329.0" layoutY="883.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="229.0" layoutY="879.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="138.0" layoutY="865.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="109.0" layoutY="845.0" radiusX="69.0" radiusY="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <Button fx:id="sendtosky_button" layoutX="104.0" layoutY="814.0" mnemonicParsing="false" onAction="#click_sendtosky" style="-fx-background-color: #238A8D; -fx-background-radius: 10;" text="Send a balloon to the sky" textFill="#f0ece2" AnchorPane.leftAnchor="104.0" AnchorPane.topAnchor="814.0">
+         <font>
+            <Font size="23.0" />
+         </font></Button>
+      <ImageView fitHeight="187.0" fitWidth="139.0" layoutX="409.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
