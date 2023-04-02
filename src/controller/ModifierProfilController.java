@@ -29,7 +29,7 @@ public class ModifierProfilController {
     private CheckBox french_checkbox;
 
     @FXML
-    private ChoiceBox<?> gender_choicebox;
+    private ChoiceBox<String> gender_choicebox;
 
     @FXML
     private Button modify_button;
@@ -95,5 +95,10 @@ public class ModifierProfilController {
     }
 
     public void setup() {
+        setup_gender_choice();
+    }
+    public void setup_gender_choice(){
+        gender_choicebox.getItems().add("Male");
+        gender_choicebox.getItems().add("Female");
     }
 }

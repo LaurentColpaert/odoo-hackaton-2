@@ -5,42 +5,44 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
       <Button fx:id="sendtosky_button" layoutX="175.0" layoutY="842.0" mnemonicParsing="false" onAction="#click_sendtosky" text="Send a balloon to the sky" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="842.0" />
       <Label fx:id="profil_label" layoutX="124.0" layoutY="46.0" text="Name" />
-      <Label layoutX="21.0" layoutY="261.0" text="Balloons you might like" />
-      <Button fx:id="balloon" layoutX="48.0" layoutY="316.0" mnemonicParsing="false" onAction="#clicked_balloon" text="Balloon" />
+      <Label layoutX="14.0" layoutY="287.0" text="Balloons you might like" />
+      <Button fx:id="balloon" layoutX="50.0" layoutY="364.0" mnemonicParsing="false" onAction="#clicked_balloon" text="Balloon" />
       <ImageView fx:id="image_profil" fitHeight="77.0" fitWidth="80.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#clicked_profile" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/profil.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ppfil" fitHeight="49.0" fitWidth="49.0" layoutX="39.0" layoutY="131.0" onMouseClicked="#clicked_match" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ppfil" fitHeight="49.0" fitWidth="49.0" layoutX="29.0" layoutY="212.0" onMouseClicked="#clicked_match" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/ppeofilfille.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="ppfil1" fitHeight="49.0" fitWidth="49.0" layoutX="100.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ppfil1" fitHeight="49.0" fitWidth="49.0" layoutX="90.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/peofillg.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="ppfil2" fitHeight="49.0" fitWidth="49.0" layoutX="175.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ppfil2" fitHeight="49.0" fitWidth="49.0" layoutX="165.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/peofillg.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="ppfil3" fitHeight="49.0" fitWidth="49.0" layoutX="249.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ppfil3" fitHeight="49.0" fitWidth="49.0" layoutX="239.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/ppeofilfille.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="pseudo_profil_label" fitHeight="49.0" fitWidth="49.0" layoutX="315.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pseudo_profil_label" fitHeight="49.0" fitWidth="49.0" layoutX="305.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/peofillg.jpg" />
          </image>
       </ImageView>
+      <HBox fx:id="box_match" layoutX="21.0" layoutY="116.0" prefHeight="57.0" prefWidth="436.0" />
    </children>
 </AnchorPane>

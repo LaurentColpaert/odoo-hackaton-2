@@ -7,9 +7,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -24,6 +26,8 @@ public class MenuController {
     public ImageView ppfil1;
     public ImageView ppfil;
     public ImageView image_profil;
+    public Label profil_label;
+    public HBox box_match;
     @FXML
     private Button balloon;
 

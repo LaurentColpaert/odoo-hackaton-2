@@ -57,6 +57,7 @@ public class CreateAccountController {
 
     @FXML
     void signup_click(ActionEvent event) {
+        retrieve_info_person();
         try{
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
@@ -72,7 +73,7 @@ public class CreateAccountController {
             System.err.println(ex.getMessage());
         }
     }
-    private void retrieve_info(){
+    private void retrieve_info_person(){
         int gender_nr = 2;
       //  String email = email_text.getText();
 //        String password = password_text.getText();

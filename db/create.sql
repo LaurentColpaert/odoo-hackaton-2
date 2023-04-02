@@ -52,3 +52,10 @@ CREATE TABLE "tag_experience" (
 	FOREIGN KEY("id_experience") REFERENCES "experience"("id_experience"),
 	FOREIGN KEY("id_tag") REFERENCES "tag"("id_tag")
 );
+
+CREATE TABLE "match" (
+     "from"	INTEGER,
+     "to"	INTEGER,
+     FOREIGN KEY("to") REFERENCES "person"("id_person"),
+     FOREIGN KEY("from") REFERENCES "person"("id_person")
+);

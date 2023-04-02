@@ -141,7 +141,7 @@ public class Request {
         ArrayList<String> languages = new ArrayList<>();
 
         //partie de la table personne
-        String sql = "INSERT INTO personne(name, age, gender, country) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO person(name, age, gender, country) VALUES(?,?,?,?)";
         try (Connection conn = DatabaseConnection.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, person.getName());
@@ -185,19 +185,7 @@ public class Request {
 
     }
 
-    public static void insertCapsule( int id_person, String date_begin,  String date_end) {
-        String sql = "INSERT INTO personne(id_person, date_begin, date_end) VALUES(?,?,?)";
 
-        try (Connection conn = DatabaseConnection.getInstance().getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, id_person);
-            pstmt.setString(2, date_begin);
-            pstmt.setString(3, date_end);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     public static void insertExperience( Experience experience) {
         String sql = "INSERT INTO experience(id_capsule, date, place) VALUES(?,?,?)";

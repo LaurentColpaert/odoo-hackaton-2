@@ -43,7 +43,7 @@
    <children>
       <ImageView fitHeight="555.0" fitWidth="403.0" layoutX="59.0" layoutY="1.0">
          <image>
-            <Image url="@../../../../Downloads/Nouveau%20projet-4-2.png" />
+            <Image url="@../assets/logo.png" />
          </image>
       </ImageView>
       <TextField fx:id="email_text" layoutX="100.0" layoutY="497.0" prefHeight="51.0" prefWidth="335.0" text="email" />

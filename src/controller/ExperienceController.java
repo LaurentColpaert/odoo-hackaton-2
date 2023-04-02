@@ -16,9 +16,15 @@ import model.Experience;
 import utils.Login;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 
 public class ExperienceController {
 
@@ -77,11 +83,15 @@ public class ExperienceController {
     private void retrieve_info(){
         String tag = tag_choice.getValue();
         String place = place_choice.getValue();
-        String date = date_experience.toString();
+        LocalDate localDate = date_experience.getValue();
         String description = textarea_descriptoion.getText();
+        Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+        Date date = Date.from(instant);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String strDate = dateFormat.format(date);
 
         Capsule capsule = Login.getInstance().getCapsule();
-        Experience experience = new Experience(capsule.getId_capsule(), date,place,new ArrayList<String>(Collections.singleton(tag)));
+        Experience experience = new Experience(capsule.getId_capsule(), strDate,place,new ArrayList<String>(Collections.singleton(tag)));
         Request.insertExperience(experience);
     }
     @FXML
