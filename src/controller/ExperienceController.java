@@ -56,7 +56,20 @@ public class ExperienceController {
 
     @FXML
     void click_return(ActionEvent event) {
+        try{
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+//        stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu.fxml"));
 
+            Parent root  = loader.load();
+            MenuController main = loader.getController();
+            main.setup();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
     private void retrieve_info(){
         String tag = tag_choice.getValue();
@@ -69,24 +82,23 @@ public class ExperienceController {
     void clicked_send(ActionEvent event) {
         retrieve_info();
         send_to_db();
-        return_home_page(event);
-    }
 
-    private void return_home_page(ActionEvent event) {
         try{
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
 //        stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/messageforsentballoon.fxml"));
 
             Parent root  = loader.load();
-            LoginController main = loader.getController();
+            MessageSentBalloonController main = loader.getController();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
     }
+
+
 
     private void send_to_db() {
 

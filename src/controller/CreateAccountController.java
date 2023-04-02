@@ -2,10 +2,17 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CreateAccountController {
 
@@ -43,7 +50,21 @@ public class CreateAccountController {
 
     @FXML
     void signup_click(ActionEvent event) {
+        try{
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+//        stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu.fxml"));
 
+            Parent root  = loader.load();
+            MenuController main = loader.getController();
+            main.setup();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
+
 
 }

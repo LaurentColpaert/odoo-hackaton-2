@@ -40,7 +40,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: f0ece2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: f0ece2;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAccountController">
    <children>
       <TextField fx:id="email_text" layoutX="90.0" layoutY="236.0" prefHeight="51.0" prefWidth="315.0" text="email" />
       <TextField fx:id="password_text" layoutX="90.0" layoutY="311.0" prefHeight="51.0" prefWidth="315.0" text="password" />

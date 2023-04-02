@@ -32,10 +32,10 @@ public class LoginController {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 //        stage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/experience.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu.fxml"));
 
         Parent root  = loader.load();
-        ExperienceController main = loader.getController();
+        MenuController main = loader.getController();
         main.setup();
         stage.setScene(new Scene(root));
         stage.show();
